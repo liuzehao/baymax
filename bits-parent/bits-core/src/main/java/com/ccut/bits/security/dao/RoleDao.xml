@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.security.dao.RoleDao">
+
+    <select id="getRoleListPage" parameterType="Role" resultType="Role">
+        SELECT * FROM sys_role
+        <where>
+            <if test="roleName != null and roleName != ''">
+                AND role_name LIKE concat('%',#{roleName},'%')
+            </if>
+            <if test="roleDescription != null and roleDescription !=''">
+                AND  role_description LIKE concat('%',#{roleDescription},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <insert id="addRole" parameterType="Role"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_role (role_name,role_description) VALUES
+        (#{roleName},#{roleDescription})
+    </insert>
+
+    <delete id="delRole" parameterType="int">
+        DELETE FROM sys_role WHERE id=#{id}
+    </delete>
+
+    <select id="findRoleById" parameterType="int" resultType="Role">
+        SELECT * from sys_role WHERE id=#{id}
+    </select>
+
+    <update id="editRole" parameterType="Role">
+        UPDATE sys_role SET role_name=#{roleName},role_description=#{roleDescription} WHERE id=#{id}
+    </update>
+
+    <select id="checkRepeatRoleNameNum" parameterType="java.lang.String" resultType="int">
+        SELECT COUNT(*) FROM sys_role WHERE role_name=#{roleName}
+    </select>
+
+    <select id="checkRepeatRoleNameByRole" parameterType="Role" resultType="int">
+        SELECT COUNT(*) FROM sys_role WHERE role_name=#{roleName} AND id=#{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.video.dao.VideoDao">
+       <select id="getAllVideo" resultType="com.ccut.bits.video.model.Video">
+              SELECT * FROM `file_info` WHERE file_type='mp4' OR  file_type='swf' OR file_type='avi'
+              <if test="begin != null and size != null">
+                     LIMIT #{begin},#{size}
+              </if>
+       </select>
+       <select id="getVideoById" resultType="com.ccut.bits.video.model.Video">
+              SELECT * FROM file_info WHERE file_id = #{id};
+       </select>
+
+</mapper>

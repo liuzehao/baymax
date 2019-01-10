@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.userCenter.dao.UserCenterDao">
+    <resultMap id="HistoryMap" type="com.ccut.bits.userCenter.model.History">
+        <result property="id" column="id"></result>
+        <result property="expert.expertName" column="expert_name"></result>
+        <result property="expert.id" column="expert_id"></result>
+        <result property="time" column="time"></result>
+    </resultMap>
+
+    <update id="updatePassword">
+        UPDATE sys_user SET password = #{password} WHERE user_id = #{userId}
+    </update>
+    <update id="editUser" parameterType="User">
+        UPDATE sys_user SET login_name=#{loginName},user_name=#{username},email=#{email} WHERE user_id=#{userId}
+    </update>
+    <update id="updateUserInfo">
+        UPDATE sys_user
+        SET
+        user_name = #{username}
+        <if test="email != null and email != ''">
+            ,email = #{email}
+        </if>
+        WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateUserFocus">
+        INSERT INTO user_focus (user_id, focus_experts,focus_themes)
+        VALUES (#{userId},#{expertIds},#{themeIds})
+        ON DUPLICATE KEY UPDATE focus_experts = VALUES(focus_experts),focus_themes = VALUES(focus_themes);
+    </update>
+
+    <delete id="delUserHistory">
+        DELETE FROM user_history_test WHERE file_id = #{id}
+    </delete>
+
+    <delete id="delGeneral">
+        DELETE FROM file_general WHERE file_id = #{id}
+    </delete>
+
+    <select id="getUserHistoryExpertIds" resultType="java.lang.Integer">
+        SELECT DISTINCT expert_id FROM user_history WHERE user_id = #{userId};
+    </select>
+
+    <select id="getUserRecommendExpertIds" resultType="java.lang.Integer">
+        SELECT expert_id FROM user_recommend WHERE user_id = #{userId}
+    </select>
+
+    <select id="getUserHistoryListPage" resultMap="HistoryMap">
+        SELECT b.file_name,b.file_downurl,b.file_id,a.time FROM user_history_test a,file_info b
+        WHERE a.file_id = b.file_id AND a.user_id = #{userId} ORDER BY a.time DESC
+    </select>
+
+    <select id="getUserGeneralListPage" resultType="com.ccut.bits.userCenter.model.General">
+        SELECT  b.file_id,b.file_name,b.file_type,a.time FROM file_general a,file_info b
+        WHERE a.file_id = b.file_id AND a.user_id = #{userId} ORDER BY a.time DESC
+    </select>
+
+    <select id="getUserFocusExperts" resultType="java.lang.String">
+        SELECT focus_experts FROM user_focus WHERE user_id = #{userId}
+    </select>
+    <select id="getUserFocusThemes" resultType="java.lang.String">
+        SELECT focus_themes FROM user_focus WHERE user_id = #{userId}
+    </select>
+</mapper>

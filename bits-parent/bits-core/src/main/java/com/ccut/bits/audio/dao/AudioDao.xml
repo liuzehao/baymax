@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.audio.dao.AudioDao">
+       <select id="getAllAudio" resultType="com.ccut.bits.audio.model.Audio">
+              SELECT * FROM `file_info` WHERE file_type='mp3' OR  file_type='wav'
+              <if test="begin != null and size != null">
+                     LIMIT #{begin},#{size}
+              </if>
+       </select>
+       <select id="getAudioById" resultType="com.ccut.bits.audio.model.Audio">
+              SELECT * FROM file_info WHERE file_id = #{id};
+       </select>
+
+</mapper>

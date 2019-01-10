@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.theme.dao.ThemeDao">
+    <update id="updateThemeHotScoreById">
+        UPDATE theme_hot SET score = #{score}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateThemeHotPatentNum">
+        UPDATE
+        theme_hot a,(SELECT theme_type_id,COUNT(DISTINCT patent_info_id)AS num FROM relationship
+        WHERE patent_info_id != -1 GROUP BY theme_type_id)AS t
+        SET     
+        a.patent_num = t.num
+        WHERE t.theme_type_id = a.id
+    </update>
+
+    <update id="updateThemeHotLiteratureNum">        
+        UPDATE theme_hot a,(SELECT theme_type_id,COUNT(DISTINCT literature_info_id)AS num FROM relationship
+        WHERE literature_info_id != -1 GROUP BY theme_type_id)AS t
+        SET
+        a.literature_num = t.num
+        WHERE t.theme_type_id = a.id
+    </update>
+
+    <update id="updateThemeUserVisit">
+
+    </update>
+
+    <update id="updateThemeExpertNum">
+        UPDATE
+        theme_hot a,(SELECT theme_type_id,COUNT(DISTINCT expert_info_id)AS num FROM relationship
+        WHERE expert_info_id != -1 GROUP BY theme_type_id)AS t
+        SET
+        a.expert_num = t.num
+        WHERE t.theme_type_id = a.id
+    </update>
+
+
+    <select id="getThemeNameById" resultType="string">
+        SELECT theme_name FROM theme_type WHERE id = #{id}
+    </select>
+
+    <select id="getParentTheme" resultType="com.ccut.bits.theme.model.ThemeTree">
+        SELECT * FROM theme_parent_type
+    </select>
+
+    <select id="getParentThemeById" resultType="com.ccut.bits.theme.model.Theme">
+        SELECT * FROM theme_parent_type where id=${id}
+    </select>
+
+    <select id="getChildTheme" resultType="com.ccut.bits.theme.model.ThemeTree">
+        SELECT a.parent_id,b.* FROM theme_relationship a,theme_type b
+        WHERE a.child_id = b.id
+    </select>
+
+    <select id="getTopTheme" resultType="com.ccut.bits.theme.model.Theme">
+        SELECT a.id,a.theme_name,a.img FROM theme_type a,theme_hot b
+        WHERE a.id = b.id
+        ORDER BY b.score DESC LIMIT 0,#{size}
+    </select>
+
+    <select id="getThemeIdByThemeName" resultType="int">
+        SELECT id FROM theme_type WHERE theme_name = #{themeName}
+    </select>
+
+    <select id="getAllThemeHot" resultType="com.ccut.bits.theme.model.ThemeHot">
+        SELECT * FROM theme_hot
+    </select>
+
+    <select id="getAllTheme" resultType="com.ccut.bits.theme.model.Theme">
+        SELECT * FROM theme_type
+    </select>
+
+    <select id="getThemesByExpertId" resultType="com.ccut.bits.theme.model.Theme">
+        SELECT a.* FROM theme_type a, expert_theme_relation b
+        WHERE a.id = b.theme_type_id AND b.expert_id = #{id}
+    </select>
+
+    <select id="getThemesByFileId" resultType="com.ccut.bits.theme.model.Theme">
+        SELECT a.* FROM theme_type a, theme_file b
+        WHERE a.id = b.theme_id AND b.file_id = #{id}
+    </select>
+
+    <select id="getThemeIdsByLiteratureIds" resultType="java.lang.Integer">
+        SELECT theme_type_id FROM relationship
+        WHERE literature_info_id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+        GROUP BY theme_type_id
+    </select>
+
+    <select id="getThemeIdsByExpertIds" resultType="java.lang.Integer">
+        SELECT DISTINCT `theme_type_id` FROM `expert_theme_relation`
+        WHERE `expert_id` IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="getTopThemeIdsByIds" resultType="java.lang.Integer">
+        SELECT id FROM theme_hot WHERE id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+        ORDER BY score DESC LIMIT 0,#{topSize}
+    </select>
+
+    <select id="getThemeHotByExpertNumDESC" resultType="com.ccut.bits.theme.model.ThemeHot">
+        SELECT * FROM theme_hot ORDER BY `expert_num` DESC
+    </select>
+    <select id="getThemeHotByLiteratureNumDESC" resultType="com.ccut.bits.theme.model.ThemeHot">
+        SELECT * FROM theme_hot ORDER BY `literature_num` DESC
+    </select>
+    <select id="getParentIds" resultType="java.lang.Integer">
+        SELECT DISTINCT parent_id FROM theme_relationship WHERE child_id IN
+        <foreach collection="childIds" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="getChildIds" resultType="java.lang.Integer">
+        SELECT DISTINCT child_id FROM theme_relationship WHERE parent_id IN
+        <foreach collection="parentIds" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="getAllThemeId" resultType="int">
+        SELECT id FROM theme_type
+    </select>
+
+
+</mapper>

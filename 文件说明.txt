@@ -1,0 +1,9 @@
+1.baymax.rar是完整的程序源代码打包，程序是按照MVC框架构造的，所以不同的文件都放到规定的文件夹下，具体的框架结构由文件夹的包含关系展示。主要的程序分布在：bits-core和bits-webapp中，二者配套出现。如果复制代码，最好是配套复制，有些个别功能相同的模块会集成在一个文件中，则没有配套文件，主要通过文件引用实现的功能。
+
+2.bits-core中：目录下存放是各个模块的dao层、model层、service层文件。每个模块都有自己的文件，内部用文件夹区分各模块。其中：\baymax\bits-parent\bits-core\src\main\java\com\ccut\bits中存放的是主要程序，test下是对应main中各个模块的测试类。如想看源码只需看main文件夹下的各模块文件即可。
+
+3.bits-webapp：存放各个模块的controller层，路径为：\baymax\bits-parent\bits-webapp\src\main\java\com\ccut\bits；  同时存放前台jsp及页面样式的部分：baymax\bits-parent\bits-webapp\src\main\webapp。
+
+4.系统中的核心模块主要有：autoanswer（自动问答）、expert（专家部分)、expertrecommend（专家推荐）、industryknowledge（热门行业推荐）、intelligence（情报相关）、literature（文献相关）、patent（专利相关）、theme（主题相关）、userCenter（用户个人中心）；如想学习Lucene检索：可以参考bits-core的main中：Lucene及index文件夹下的内容。
+
+5.各个层次之间数据调用有关联，只可以进行代码学习，如果想仅仅通过复制个别代码实现的功能的话是不可能的。

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.expert.dao.ExpertDao">
+    <update id="updateExpertScore">
+        UPDATE expert_rank SET expert_score = #{score} WHERE expert_id = #{expertId}
+    </update>
+
+    <select id="getAllExpert" resultType="com.ccut.bits.expert.model.Expert">
+        SELECT * FROM expert_info
+        <if test="begin != null and size != null">
+            LIMIT #{begin},#{size};
+        </if>
+    </select>
+
+    <select id="getTotalRecord" resultType="int">
+        SELECT COUNT(id) FROM expert_info
+    </select>
+
+    <select id="getExpertsByIds" resultType="com.ccut.bits.expert.model.Expert">
+        SELECT * FROM expert_info
+         <where>
+             id IN 
+             <foreach collection="ids" item="id" open="(" separator="," close=")">
+                 #{id}
+             </foreach>
+        </where>
+    </select>
+
+    <select id="getExpertByNames" resultType="com.ccut.bits.expert.model.Expert">
+        SELECT * FROM expert_info WHERE expert_name IN
+        <foreach collection="names" open="(" separator="," close=")" item="name">
+            #{name}
+        </foreach>
+    </select>
+
+    <select id="getExpertById" resultType="com.ccut.bits.expert.model.Expert">
+        SELECT * FROM expert_info WHERE id = #{id}
+    </select>
+
+    <select id="getExpertIdsByExpertNames" resultType="java.lang.Integer">
+        SELECT id FROM expert_info WHERE expert_name IN
+        <foreach collection="names" item="name" open="(" separator="," close=")">
+            #{name}
+        </foreach>
+    </select>
+
+    <select id="getTopExpertRankByThemeId" resultType="com.ccut.bits.expert.model.ExpertRank">
+        SELECT a.* FROM expert_info a,expert_rank b,expert_theme_relation c
+        WHERE a.id = b.expert_id AND c.expert_id = b.expert_id AND c.theme_type_id = #{id}
+        ORDER BY b.expert_score DESC LIMIT 0,#{topSize}
+    </select>
+
+    <select id="getTotalExpertByThemeId" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT expert_id) FROM expert_theme_relation WHERE theme_type_id = #{themeId}
+    </select>
+
+    <select id="getExpertListPage" resultType="com.ccut.bits.expert.model.Expert">
+        SELECT id, expert_name, expert_org FROM expert_info
+        <where>
+            <if test="expertName != null and expertName != ''">
+                expert_name LIKE concat('%',#{expertName},'%')
+            </if>
+        </where>
+
+    </select>
+
+    <select id="getExpertOrgByExpertId" resultType="java.lang.String">
+        SELECT expert_org FROM expert_info WHERE id = #{id}
+    </select>
+
+    <select id="getTopExpert" resultType="java.lang.Integer">
+        SELECT expert_id FROM expert_rank WHERE expert_id IN
+        <foreach collection="expertIds" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+        ORDER BY expert_score;
+    </select>
+
+    <insert id="addExpertInfo" keyProperty="id" useGeneratedKeys="true" parameterType="com.ccut.bits.expert.model.Expert">
+        INSERT INTO expert_info(expert_name, expert_org) VALUES (#{expertName}, #{expertOrg})
+    </insert>
+
+    <insert id="addExpertTheme">
+        INSERT INTO expert_theme_relation(expert_id, theme_type_id) VALUES(#{expertId}, #{themeId})
+    </insert>
+
+    <delete id="deleteExpert" parameterType="int">
+        DELETE FROM expert_info WHERE id = #{id}
+    </delete>
+
+    <update id="editExpert">
+        UPDATE expert_info
+        SET
+        expert_name = #{expertName},
+        expert_org = #{expertOrg}
+        WHERE
+        id = #{id}
+    </update>
+
+    <select id="getExpertRelationshipByThemeId" parameterType="int" resultType="java.lang.String">
+        SELECT b.author_cn FROM relationship AS a, literature_info AS b WHERE a.literature_info_id = b.id AND a.theme_type_id = #{themeId}
+    </select>
+</mapper>

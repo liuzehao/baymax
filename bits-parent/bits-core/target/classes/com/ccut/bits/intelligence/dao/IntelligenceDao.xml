@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.intelligence.dao.IntelligenceDao">
+    <select id="getAllIntelligence" resultType="com.ccut.bits.intelligence.model.Intelligence">
+        SELECT * FROM `intelligence_info`
+    </select>
+</mapper>

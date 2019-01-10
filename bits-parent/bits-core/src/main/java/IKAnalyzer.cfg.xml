@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">  
+<properties>  
+	<comment>IK Analyzer 扩展配置</comment>
+	<!--扩展字典 -->
+	<entry key="ext_dict">com/ccut/bits/dict/dic/ext.dic;</entry>
+	
+	<!--扩展停止词字典-->
+	<entry key="ext_stopwords">
+		com/ccut/bits/dict/dic/stopword.dic;
+		com/ccut/bits/dict/dic/ChineseStopWords.dic;
+		com/ccut/bits/dict/dic/BaiStopWords.dic;
+		com/ccut/bits/dict/dic/HaStopWords.dic;
+		com/ccut/bits/dict/dic/SiStopWords.dic;
+	</entry>
+	
+</properties>

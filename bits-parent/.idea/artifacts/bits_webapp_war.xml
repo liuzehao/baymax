@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bits-webapp:war">
+    <output-path>$PROJECT_DIR$/bits-webapp/target</output-path>
+    <root id="archive" name="bits.war">
+      <element id="artifact" artifact-name="bits-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>

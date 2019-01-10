@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.security.dao.UserDao">
+
+    <select id="findUserByLoginName" resultType="User" parameterType="string">
+        SELECT * FROM sys_user WHERE login_name=#{userName}
+    </select>
+
+    <select id="getRolesByLoginName" resultType="string" parameterType="string">
+        SELECT
+           sr.role_name
+        FROM
+          sys_user su,
+          sys_user_role sur,
+          sys_role sr
+        WHERE su.user_id = sur.user_id
+            AND sur.role_id = sr.id
+            AND su.login_name = #{username}
+    </select>
+
+    <select id="getPermTokensByLoginName" resultType="string" parameterType="string">
+        SELECT
+          arp.perm_token
+        FROM
+          sys_user su,
+          sys_user_role sur,
+          acl_role_permission arp
+        WHERE su.user_id = sur.user_id
+        AND sur.role_id = arp.role_id
+        AND su.login_name =#{username}
+    </select>
+
+    <select id="getUserListPage" resultType="User">
+        SELECT a.*,b.role_name FROM sys_user a,sys_role b,sys_user_role c
+        <where>
+            a.user_id=c.user_id
+            AND b.id = c.role_id
+            <if test="loginName != null and loginName != ''">
+                AND a.login_name LIKE concat('%',#{loginName},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <insert id="addUserDo" parameterType="user" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO sys_user (login_name,user_name,password, email) VALUES
+        (#{loginName},#{username},#{password},#{email})
+    </insert>
+
+    <insert id="addUserRole" parameterType="user">
+        INSERT INTO sys_user_role (user_id,role_id) VALUES
+        (#{userId},#{roleId})
+    </insert>
+
+    <delete id="delUser" parameterType="int">
+        DELETE FROM sys_user WHERE user_id = #{id}
+    </delete>
+
+    <delete id="delUserRole" parameterType="int">
+        DELETE FROM sys_user_role WHERE user_id = #{id}
+    </delete>
+
+    <select id="findUserById" parameterType="int" resultType="User">
+        SELECT a.*,b.role_name,b.id role_id FROM  sys_user a,sys_role b,sys_user_role c
+        WHERE a.user_id=c.user_id
+        AND b.id = c.role_id
+        AND a.user_id=#{id}
+    </select>
+
+    <update id="editUser" parameterType="User">
+        UPDATE sys_user SET login_name=#{loginName},user_name=#{username},password=#{password} WHERE user_id=#{userId}
+    </update>
+
+    <update id="editUserRole" parameterType="User">
+        UPDATE sys_user_role SET role_id=#{roleId} WHERE user_id=#{userId}
+    </update>
+
+    <select id="hasCheckRepeatLoginName" parameterType="java.lang.String" resultType="int">
+        SELECT COUNT(*) FROM sys_user WHERE login_name=#{loginName}
+    </select>
+
+    <select id="checkRepeatUser" parameterType="User" resultType="int">
+        SELECT COUNT(*) FROM sys_user WHERE login_name=#{loginName} AND user_id=#{userId}
+    </select>
+
+    <insert id="addUserHistory" >
+        INSERT ignore INTO user_history_test(user_id, file_id,time) VALUES (#{userId}, #{fileId},#{time})
+    </insert>
+
+</mapper>

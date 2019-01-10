@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.security.dao.PermissionDao">
+
+    <insert id="addPermission" parameterType="Permission">
+        insert into acl_permission(perm_token, description) values(#{permToken}, #{description})
+    </insert>
+
+    <select id="getPermissionListPage" resultType="Permission">
+        SELECT * FROM acl_permission
+        <where>
+            <if test="permToken != null and permToken != ''">
+                AND perm_token LIKE concat('%',#{permToken},'%')
+            </if>
+            <if test="description != null and description != ''">
+                AND description LIKE concat('%',#{description},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <select id="findPermissionById" resultType="Permission">
+        SELECT * FROM acl_permission where id=#{id}
+    </select>
+
+    <delete id="delPermission" parameterType="int">
+        delete from acl_permission where id=#{id}
+    </delete>
+
+    <update id="editPermission" parameterType="Permission">
+        UPDATE acl_permission SET perm_token=#{permToken},description=#{description} where id=#{id}
+    </update>
+
+    <select id="checkRepeatPermToken" parameterType="Permission" resultType="int">
+        SELECT COUNT(*) FROM acl_permission WHERE perm_token=#{permToken}
+    </select>
+
+    <select id="checkRepeatPermissionName" parameterType="Permission" resultType="int">
+        SELECT COUNT(*) FROM acl_permission WHERE perm_token=#{permToken} AND id=#{id}
+    </select>
+
+    <select id="findPermissionIdByPermToken" resultType="int">
+        SELECT id from acl_permission WHERE perm_token=#{permToken}
+    </select>
+
+</mapper>

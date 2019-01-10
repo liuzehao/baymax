@@ -1,0 +1,55 @@
+@font-face {
+	font-family: toolbar-iconfont;
+	src: url(toolbar-iconfont.eot?#iefix) format("embedded-opentype"), url(toolbar-iconfont.woff) format("woff"), url(toolbar-iconfont.ttf) format("truetype"), url(toolbar-iconfont.svg#iconfont) format("svg");
+}
+.toolbar-iconfont {
+	font-family: "toolbar-iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-text-stroke-width: 0.2px;
+}
+.icon-bianji::before {
+	content: "\e601";
+}
+.icon-iconfontbell2::before {
+	content: "\e602";
+}
+.icon-fangdajing::before {
+	content: "\e603";
+}
+.icon-shouji::before {
+	content: "\e604";
+}
+.icon-guanli::before {
+	content: "\e607";
+}
+.icon-iconstar::before {
+	content: "\e60f";
+}
+.icon-shouye::before {
+	content: "\e600";
+}
+.icon-xiajiantou::before {
+	content: "\e60e";
+}
+.icon-chuanppt::before {
+	content: "\e605";
+}
+.icon-tiwenti::before {
+	content: "\e606";
+}
+.icon-xieboke::before {
+	content: "\e608";
+}
+.icon-daimapian::before {
+	content: "\e609";
+}
+.icon-chuangjian::before {
+	content: "\e60a";
+}
+.icon-shangchuan::before {
+	content: "\e60b";
+}
+.icon-huiche::before {
+	content: "\e60d";
+}
+.icon-tuichu::before {
+	content: "\e60c";
+}

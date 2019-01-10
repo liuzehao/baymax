@@ -1,0 +1,36 @@
+DIV.ac {
+	BORDER-TOP: gray 1px solid; BORDER-RIGHT: gray 1px solid; BACKGROUND: #fff; OVERFLOW-X: hidden; OVERFLOW-Y: auto; BORDER-BOTTOM: gray 1px solid; POSITION: absolute; MARGIN-LEFT: 7px; BORDER-LEFT: gray 1px solid; Z-INDEX: 999; MARGIN-TOP: 2px; DISPLAY: none
+}
+DIV.ac UL {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+DIV.ac UL LI {
+	LIST-STYLE-TYPE: none; FONT-SIZE: 15px; FONT-FAMILY: helvetica, arial, "Courier New", sans-serif; WORD-BREAK: break-all; FONT-WEIGHT: bold; MARGIN: 0px; BACKGROUND-COLOR: white
+}
+DIV.ac UL LI DIV {
+	WIDTH: 100%; PADDING-TOP: 5px; DISPLAY: table-row
+}
+DIV.ac UL LI DIV EM {
+	FONT-SIZE: 15px; FONT-WEIGHT: bold; COLOR: #ff6600; FONT-STYLE: normal; BACKGROUND-COLOR: #b0e2ff
+}
+DIV.ac UL LI.normal {
+	PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 0px
+}
+DIV.ac UL LI.normal DIV SPAN {
+	VERTICAL-ALIGN: middle; DISPLAY: table-cell
+}
+DIV.ac UL LI.iconList {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 0px
+}
+DIV.ac UL LI.iconList DIV DIV {
+	VERTICAL-ALIGN: middle; DISPLAY: table-cell; PADDING-RIGHT: 5px
+}
+DIV.ac UL LI.iconList DIV DIV IMG {
+	DISPLAY: table-cell
+}
+DIV.ac UL LI.iconList DIV SPAN {
+	VERTICAL-ALIGN: middle; DISPLAY: table-cell
+}
+DIV.ac UL LI.selected {
+	BACKGROUND-COLOR: #dcdcdc
+}

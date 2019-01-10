@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.upload.Dao.upload">
+<insert id="upload" parameterType="com.ccut.bits.upload.Model.File">
+       INSERT INTO file_info(file_name,file_type,file_time,user_id,file_size)VALUES (#{name},#{type},#{time},#{userId},#{size});
+</insert>
+    <update id="uploadImg" parameterType="com.ccut.bits.upload.Model.File">
+   update file_info set file_imgurl=#{imgurl}  where file_id=#{userId};
+    </update>
+
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.dict.dao.DictionaryDao">
+
+    <select id="getThemeDictionary" resultType="com.ccut.bits.dict.model.ThemeDict">
+        SELECT * FROM theme_type
+    </select>
+
+    <select id="getLiteratureDictionary" resultType="com.ccut.bits.dict.model.LiteratureDict">
+        SELECT `key` FROM `literature_info`
+    </select>
+</mapper>

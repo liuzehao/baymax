@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.themeWeb.dao.ThemeWebDao">
+
+    <select id="getThemeWebByThemeId" parameterType="int" resultType="com.ccut.bits.themeWeb.model.ThemeWeb">
+        SELECT DISTINCT * FROM people_relationship where theme_id = #{id}
+    </select>
+
+    <select id="getPeopleRankByThemeId" parameterType="int" resultType="com.ccut.bits.themeWeb.model.PeopleRank">
+        SELECT * FROM people_rank where theme_id = #{id} ORDER BY rank_id ASC
+    </select>
+
+    <select id="getThemeId" parameterType="java.lang.String" resultType="int">
+        SELECT id FROM theme_type WHERE theme_name = #{themeName}
+    </select>
+
+    <insert id="addPeopleRank" parameterType="com.ccut.bits.themeWeb.model.PeopleRank">
+        INSERT INTO people_rank VALUES (#{themeId}, #{peopleName}, #{rank}, #{rankId})
+    </insert>
+
+    <insert id="addThemeWeb" parameterType="com.ccut.bits.themeWeb.model.ThemeWeb">
+        INSERT INTO people_relationship VALUES (#{themeId},#{idFirst}, #{idSecond})
+    </insert>
+    
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="localCacheScope" value="STATEMENT"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="Literature" type="com.ccut.bits.literature.model.Literature"/>
+        <typeAlias alias="Patent" type="com.ccut.bits.patent.model.Patent"/>
+        <typeAlias alias="Expert" type="com.ccut.bits.expert.model.Expert"/>
+        <typeAlias alias="Theme" type="com.ccut.bits.theme.model.ThemeTree"></typeAlias>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.ccut.bits.plugin.PagePlugin">
+            <property name="dialect" value="mysql"/>
+            <property name="pageSqlId" value=".*ListPage.*"/>
+        </plugin>
+    </plugins>
+</configuration>

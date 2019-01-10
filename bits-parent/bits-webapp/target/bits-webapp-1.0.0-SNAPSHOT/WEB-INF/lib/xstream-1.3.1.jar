@@ -1,0 +1,56 @@
+﻿<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>长春工业大学校园网登陆系统                         </title>
+
+
+<script language="javascript" src="http://mygate.ccut.edu.cn/gate/index/js/main.js"> </script>
+
+</head><body>
+
+<div id="gate">
+<center>
+<div id="top"></div>
+<div id="width">
+<div id="left"></div>
+<div id="center">
+
+<table  align="center" cellpadding=0 cellspacing=0 id="login_table" >
+<form name=form1 method=post action="">
+<tr>
+<td  colspan=2 align=center valign="middle"  id="login_td1">请输入您的帐号和密码</td>
+</tr>
+<tr>
+<td height="39"     id="login_td2" >
+<p > 帐号 Account :</td>
+<td id="login_td3"    ><p> &nbsp;
+<input name=DDDDD id="login_user" maxlength=26 style="" size="20"></p></td>
+</tr>
+<tr>
+<td  id="login_td4"    >密码 Password :</td>
+<td id="login_td5"   ><p>&nbsp;
+<input type=password name=upass id="login_pws" maxlength=16 size="20">
+</p></td>
+</tr>
+<tr>
+<td id="login_td6" colspan=2 ><p >
+<input id="login_submit" type=submit name=0MKKey value="登录 Login" >
+&nbsp;
+<input id="login_reset" type=reset name=1MKKey value="重置 Reset" >
+&nbsp;
+<input id="login_chzh" type=button name=link value="账号充值及查询" onClick="chongzhi()"  >
+</td>
+</tr>
+<tr>
+<td id="login_td7"  colspan=2 ><p class=f1 align=center><a href=9.htm>修改密码 Edit Password</a></td>
+</tr>
+</form>
+</table>
+
+</div>
+<div id="right"></div>
+</div>
+<div id="bottom"></div>
+<center>
+</div>
+<center>
+</body></html>

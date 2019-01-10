@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.picture.dao.PictureDao">
+    <select id="getAllPicture" resultType="com.ccut.bits.picture.model.Picture">
+        SELECT * FROM `file_info` WHERE file_type='png' OR  file_type='jpg' OR file_type='gif'
+        <if test="begin != null and size != null">
+            LIMIT #{begin},#{size}
+        </if>
+    </select>
+
+    <select id="getTotalRecord" resultType="int">
+        SELECT COUNT(`id`) FROM `picture_info`
+    </select>
+
+    <select id="getPatentById" resultType="com.ccut.bits.patent.model.Patent">
+        SELECT * FROM patent_info WHERE id = #{id}
+    </select>
+
+    <select id="getPatentsByInventor" resultType="com.ccut.bits.patent.model.Patent">
+        SELECT * FROM patent_info WHERE inventor = #{inventor}
+    </select>
+
+    <select id="countPatentByExpertName" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM patent_info WHERE inventor = #{name}
+    </select>
+
+    <select id="getPatentListPage" resultType="com.ccut.bits.patent.model.Patent">
+        SELECT * FROM patent_info
+        <where>
+            <if test="inventor != null and inventor != ''">
+                and inventor LIKE concat('%',#{inventor},'%')
+            </if>
+        </where>
+        ${sortField} ${sortOrder}
+    </select>
+
+    <insert id="addPatentInfo" parameterType="com.ccut.bits.patent.model.Patent">
+        INSERT INTO patent_info(title, DATE, ABS, applicant, inventor) VALUES
+        (#{title} ,#{date}, #{abs}, #{applicant},#{inventor})
+    </insert>
+
+    <delete id="deletePatentById" parameterType="int">
+        DELETE FROM patent_info WHERE id = #{id}
+    </delete>
+
+    <update id="updatePatentById" parameterType="com.ccut.bits.patent.model.Patent">
+        UPDATE patent_info SET title=#{title},date=#{date},abs=#{abs}, applicant=#{applicant}, inventor=#{inventor} WHERE id=#{id}
+    </update>
+</mapper>

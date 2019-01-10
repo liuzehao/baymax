@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccut.bits.relation.dao.RelationDao">
+    <select id="getThemeRelation" resultType="com.ccut.bits.model.Relation">
+        SELECT
+        `theme_type_id`,
+        GROUP_CONCAT(DISTINCT `expert_info_id`) AS expert_info_id,
+        GROUP_CONCAT(DISTINCT `literature_info_id`) AS literature_info_id
+        FROM `relationship` GROUP BY `theme_type_id`
+    </select>
+
+    <select id="getExpertRelation" resultType="com.ccut.bits.model.Relation">
+        SELECT
+        `expert_info_id`,
+        GROUP_CONCAT(DISTINCT `theme_type_id`) AS theme_type_id,
+        GROUP_CONCAT(DISTINCT `literature_info_id`) AS literature_info_id
+        FROM `relationship` GROUP BY `expert_info_id`
+    </select>
+
+    <select id="getPatentRelation" resultType="com.ccut.bits.model.Relation">
+        SELECT `inventor`AS expert_name,GROUP_CONCAT(`id`) AS patent_info_id FROM `patent_info` GROUP BY `inventor`
+    </select>
+</mapper>

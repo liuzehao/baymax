@@ -1,0 +1,543 @@
+BODY {
+	BACKGROUND: url(../images/index-bg.jpg) #f5f5f5 repeat-x center top
+}
+#toper {
+	POSITION: static
+}
+.top-bar {
+	HEIGHT: 26px; PADDING-TOP: 2px
+}
+#header {
+	HEIGHT: 370px; WIDTH: 100%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+#header .inner {
+	HEIGHT: 370px; WIDTH: 1200px; POSITION: relative; MARGIN: 0px auto
+}
+#header #logo {
+	MARGIN-LEFT: -200px; LEFT: 50%; TOP: 152px
+}
+#header #search {
+	WIDTH: 920px; POSITION: absolute; MARGIN-LEFT: -425px; LEFT: 50%; BOTTOM: 65px
+}
+#search .search-box {
+	HEIGHT: 38px; WIDTH: 838px; _width: 841px
+}
+#search .search-input {
+	HEIGHT: 20px; WIDTH: 710px; PADDING-BOTTOM: 9px; PADDING-TOP: 9px; PADDING-LEFT: 5px; LINE-HEIGHT: 20px; PADDING-RIGHT: 5px
+}
+#search .search-btn {
+	WIDTH: 113px; MARGIN: 3px 0px
+}
+#body {
+	OVERFLOW: hidden; WIDTH: 100%; BACKGROUND: url(../images/index-body-bg.png) #fff repeat-x center -35px; BORDER-BOTTOM: #ddd 1px solid; PADDING-TOP: 20px; MARGIN: 0px
+}
+#body .inner {
+	WIDTH: 1200px; POSITION: relative; MARGIN: 0px auto
+}
+.object-show-select {
+	HEIGHT: 97px; WIDTH: 995px; MARGIN: -5px auto 0px
+}
+.object-show-select .select-left {
+	FLOAT: left; MARGIN-LEFT: 15px
+}
+.object-show-select .select-right {
+	FLOAT: right; MARGIN-RIGHT: 15px
+}
+.object-show-select LI {
+	DISPLAY: inline
+}
+.object-show-select A {
+	CURSOR: default; FONT-SIZE: 12px; HEIGHT: 79px; FONT-FAMILY: "Microsoft YaHei"; WIDTH: 50px; FLOAT: left; COLOR: #575757; TEXT-ALIGN: center; MARGIN: 5px 30px 0px; LINE-HEIGHT: 20px
+}
+.object-show-select A .pic {
+	HEIGHT: 50px; WIDTH: 50px; BACKGROUND: url(../images/index-ico2.png) no-repeat; DISPLAY: block
+}
+.object-show-select .current A {
+	FONT-SIZE: 14px; WIDTH: 60px; COLOR: #0c7a97; MARGIN: 0px 25px
+}
+.object-show-select .current A .pic {
+	HEIGHT: 60px; WIDTH: 60px; BACKGROUND: url(../images/index-ico3.png) no-repeat; DISPLAY: block
+}
+.object-show-select .qk .pic {
+	BACKGROUND-POSITION: -131px 0px
+}
+.object-show-select .zt .pic {
+	BACKGROUND-POSITION: -262px 0px
+}
+.object-show-select .zz .pic {
+	BACKGROUND-POSITION: -393px 0px
+}
+.object-show-select .jg .pic {
+	BACKGROUND-POSITION: -524px 0px
+}
+.object-show-select .jj .pic {
+	BACKGROUND-POSITION: -655px 0px
+}
+.object-show-select .xk .pic {
+	BACKGROUND-POSITION: -786px 0px
+}
+.object-show-select .dq .pic {
+	BACKGROUND-POSITION: -917px 0px
+}
+.object-show-select .current .wz .pic {
+	BACKGROUND-POSITION: 0px 0px
+}
+.object-show-select .current .qk .pic {
+	BACKGROUND-POSITION: -131px 0px
+}
+.object-show-select .current .zt .pic {
+	BACKGROUND-POSITION: -262px 0px
+}
+.object-show-select .current .zz .pic {
+	BACKGROUND-POSITION: -393px 0px
+}
+.object-show-select .current .jg .pic {
+	BACKGROUND-POSITION: -524px 0px
+}
+.object-show-select .current .jj .pic {
+	BACKGROUND-POSITION: -655px 0px
+}
+.object-show-select .current .xk .pic {
+	BACKGROUND-POSITION: -786px 0px
+}
+.object-show-select .current .dq .pic {
+	BACKGROUND-POSITION: -917px 0px
+}
+.object-show-box {
+	POSITION: relative
+}
+.object-show-corner {
+	RIGHT: -10px; POSITION: absolute; BOTTOM: -10px
+}
+.object-show-list {
+	HEIGHT: 221px; WIDTH: 1003px; BACKGROUND: url(../images/book-bg-2.png) no-repeat; POSITION: relative; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px
+}
+.object-show-loading {
+	HEIGHT: 218px; BACKGROUND: url(../images/loading2.gif) no-repeat 200px 71px
+}
+.object-show-loading2 {
+	HEIGHT: 218px; BACKGROUND: url(../images/loading2.gif) no-repeat 730px 71px
+}
+.object-show {
+	BACKGROUND: url(../images/book-bg-2.png) no-repeat
+}
+.show-left {
+	OVERFLOW: hidden; HEIGHT: 180px; WIDTH: 425px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 20px; PADDING-LEFT: 30px; PADDING-RIGHT: 45px
+}
+.show-right {
+	OVERFLOW: hidden; HEIGHT: 180px; WIDTH: 425px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 20px; PADDING-LEFT: 30px; PADDING-RIGHT: 45px
+}
+.show-right {
+	FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 20px; PADDING-LEFT: 45px; PADDING-RIGHT: 30px
+}
+.object-show DL {
+	OVERFLOW: hidden; MARGIN-BOTTOM: 15px; HEIGHT: 71px; BORDER-BOTTOM: #ccc 1px solid; POSITION: relative; PADDING-BOTTOM: 11px; PADDING-LEFT: 5px; LINE-HEIGHT: 18px; MARGIN-RIGHT: 0px
+}
+.object-show DT {
+	FONT-SIZE: 14px; FONT-FAMILY: "Microsoft YaHei"; LINE-HEIGHT: 24px; MARGIN-RIGHT: 0.8em
+}
+.object-show DT A {
+	TEXT-DECORATION: underline
+}
+.object-show DD {
+	COLOR: #777; LINE-HEIGHT: 20px
+}
+.object-show DD STRONG {
+	FONT-WEIGHT: lighter
+}
+.object-show DD SPAN {
+	MARGIN-RIGHT: 0.8em
+}
+.object-show .follow {
+	WHITE-SPACE: nowrap; COLOR: #868686
+}
+.object-show .whole {
+	WIDTH: 100%; FLOAT: left; CLEAR: left
+}
+.object-show .more {
+	HEIGHT: 1px; POSITION: relative; MARGIN: -17px -10px 15px 0px; LINE-HEIGHT: 1px
+}
+.object-show .more A {
+	BACKGROUND: #fbfbfb; RIGHT: 10px; POSITION: absolute; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN-TOP: -15px; LINE-HEIGHT: 30px; PADDING-RIGHT: 5px
+}
+.object-show .graph {
+	MARGIN-BOTTOM: 20px; PADDING-TOP: 5px; PADDING-LEFT: 110px; MIN-HEIGHT: 50px; _height: 50px
+}
+.object-show .graph DT {
+	MARGIN-BOTTOM: 3px; HEIGHT: 17px; WIDTH: 124px; BACKGROUND: url(../images/index-graph-t.png) no-repeat; FLOAT: none; COLOR: #fff; PADDING-LEFT: 10px; LINE-HEIGHT: 15px
+}
+.object-show .graph DT A {
+	TEXT-DECORATION: none; COLOR: #fff
+}
+.object-show .graph .pic {
+	POSITION: absolute; LEFT: 5px; TOP: 3px
+}
+.object-show .graph .pic IMG {
+	BORDER-TOP: #bedff2 3px solid; HEIGHT: 53px; BORDER-RIGHT: #bedff2 3px solid; WIDTH: 86px; BORDER-BOTTOM: #bedff2 3px solid; BORDER-LEFT: #bedff2 3px solid; border-radius: 3px
+}
+.object-show .graph .intro {
+	COLOR: #7d7e7f
+}
+.show-title {
+	DISPLAY: none
+}
+.show-more {
+	DISPLAY: none
+}
+.cai {
+	POSITION: relative
+}
+.cai .show-title {
+	POSITION: absolute; LEFT: -2px; DISPLAY: block; TOP: -1px
+}
+.cai .show-more {
+	RIGHT: 5px; POSITION: absolute; Z-INDEX: 99; DISPLAY: block; BOTTOM: -10px
+}
+.cai .show-more IMG {
+	border-radius: 3px
+}
+.cai .show-left {
+	HEIGHT: 160px; PADDING-TOP: 30px
+}
+.cai .show-right {
+	HEIGHT: 160px; PADDING-TOP: 30px
+}
+.cai DL {
+	MARGIN-BOTTOM: 5px; HEIGHT: auto; BORDER-BOTTOM-STYLE: dotted; PADDING-BOTTOM: 6px
+}
+.cai .follow {
+	DISPLAY: none
+}
+.author DL {
+	PADDING-LEFT: 40px
+}
+.author .pic {
+	POSITION: absolute; LEFT: 0px; TOP: 0px
+}
+.object-show-arrow {
+	HEIGHT: 1px; WIDTH: 1100px; POSITION: relative; MARGIN: 0px auto
+}
+.object-show-arrow A {
+	HEIGHT: 57px; WIDTH: 20px; BACKGROUND: url(../images/object-show-arrow.png) no-repeat; POSITION: absolute; FILTER: alpha(opacity=60); MARGIN-TOP: -150px; DISPLAY: block; opacity: 0.6
+}
+.object-show-arrow A:hover {
+	FILTER: alpha(opacity=100); opacity: 1
+}
+.object-show-arrow .arrow-left {
+	LEFT: 0px
+}
+.object-show-arrow .arrow-right {
+	RIGHT: 0px; BACKGROUND-POSITION: -20px 0px
+}
+.old-data {
+	HEIGHT: 75px; WIDTH: 1000px
+}
+.old-data UL {
+	WIDTH: 1050px
+}
+.old-data LI {
+	DISPLAY: inline
+}
+.old-data LI A {
+	BORDER-TOP: #dbdbdb 2px solid; HEIGHT: 70px; BORDER-RIGHT: #dbdbdb 2px solid; WIDTH: 313px; BACKGROUND: #fff no-repeat; BORDER-BOTTOM: #dbdbdb 2px solid; FLOAT: left; BORDER-LEFT: #dbdbdb 2px solid; MARGIN-RIGHT: 24px
+}
+.old-data LI SPAN {
+	BORDER-TOP: #dbdbdb 2px solid; HEIGHT: 70px; BORDER-RIGHT: #dbdbdb 2px solid; WIDTH: 313px; BACKGROUND: #fff no-repeat; BORDER-BOTTOM: #dbdbdb 2px solid; FLOAT: left; BORDER-LEFT: #dbdbdb 2px solid; MARGIN-RIGHT: 24px
+}
+.old-data LI A {
+	MARGIN-TOP: -15px
+}
+.old-data LI A DL {
+	PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 15px; LINE-HEIGHT: 18px; PADDING-RIGHT: 15px
+}
+.old-data LI A DT {
+	MARGIN-BOTTOM: 2px; FONT-SIZE: 16px
+}
+.old-data LI A DD {
+	LINE-HEIGHT: 16px
+}
+.old-data .d1 A {
+	BACKGROUND-IMAGE: url(../images/index-d1.gif); BACKGROUND-POSITION: 245px 5px
+}
+.old-data .d2 A {
+	BACKGROUND-IMAGE: url(../images/index-d2.gif); BACKGROUND-POSITION: 240px 1px
+}
+.old-data .d3 A {
+	BACKGROUND-IMAGE: url(../images/index-d3.gif); BACKGROUND-POSITION: 245px 5px
+}
+.old-data LI SPAN {
+	BORDER-TOP: 0px; BORDER-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-BOTTOM: 0px; MARGIN: 2px 26px 2px 2px; BORDER-LEFT: 0px
+}
+.old-data LI SPAN DL {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px
+}
+.old-data DL {
+	PADDING-BOTTOM: 15px; PADDING-TOP: 15px; PADDING-LEFT: 20px; LINE-HEIGHT: 18px; PADDING-RIGHT: 20px
+}
+.old-data DT {
+	MARGIN-BOTTOM: 4px; FONT-SIZE: 18px; FONT-FAMILY: "Microsoft YaHei"; COLOR: #434343
+}
+.old-data DD {
+	COLOR: #919191
+}
+.links {
+	BACKGROUND: #30333a; ZOOM: 1; COLOR: #7b7c80
+}
+.links :after {
+	COLOR: #333333; CONTENT: " "; CLEAR: both; DISPLAY: block
+}
+#body .links .inner {
+	WIDTH: 1082px; PADDING-BOTTOM: 40px; PADDING-TOP: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px
+}
+.links H4 {
+	MARGIN-BOTTOM: 8px; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.links A {
+	COLOR: #7b7c80; LINE-HEIGHT: 21px
+}
+.links .link-box {
+	WIDTH: 270px; FLOAT: left
+}
+.links .link-app {
+	FLOAT: right
+}
+#more {
+	HEIGHT: 315px; BACKGROUND: url(../images/index-globa.jpg) no-repeat center 50%; BORDER-BOTTOM: #dddddd 1px solid
+}
+#more .inner {
+	WIDTH: 1000px; POSITION: relative; PADDING-TOP: 30px; MARGIN: 0px auto
+}
+#more H2 {
+	MARGIN-BOTTOM: 26px; HEIGHT: 15px; BORDER-BOTTOM: #e1e1df 1px solid; POSITION: relative; MARGIN-LEFT: 105px; MARGIN-TOP: 32px
+}
+#more H2 SPAN {
+	FONT-SIZE: 24px; FONT-FAMILY: "Microsoft YaHei"; POSITION: absolute; FONT-WEIGHT: lighter; LEFT: -105px; TOP: 0px
+}
+#more .intro {
+	OVERFLOW: hidden; BORDER-TOP: #eeeeee 2px solid; BORDER-RIGHT: #eeeeee 2px solid; WIDTH: 920px; BACKGROUND: url(../images/intro-bg.png) #fff no-repeat right bottom; BORDER-BOTTOM: #eeeeee 2px solid; PADDING-BOTTOM: 28px; PADDING-TOP: 28px; PADDING-LEFT: 38px; BORDER-LEFT: #eeeeee 2px solid; PADDING-RIGHT: 38px
+}
+#more .intro UL {
+	WIDTH: 980px
+}
+#more .intro LI {
+	HEIGHT: 29px; WIDTH: 400px; BACKGROUND: url(../images/intro-ico.gif) no-repeat 5px 7px; BORDER-BOTTOM: #b3b3b3 1px dotted; FLOAT: left; PADDING-LEFT: 26px; LINE-HEIGHT: 29px; MARGIN-RIGHT: 60px
+}
+#footer {
+	BACKGROUND: #fff
+}
+.w-980 #header {
+	WIDTH: 100%
+}
+.w-980 #body {
+	WIDTH: 100%
+}
+.s-980 #header {
+	WIDTH: 100%
+}
+.s-980 #body {
+	WIDTH: 100%
+}
+.w-980 #header .inner {
+	WIDTH: 960px
+}
+.w-980 #body .inner {
+	WIDTH: 960px
+}
+.w-980 #footer .inner {
+	WIDTH: 960px
+}
+.s-980 #header .inner {
+	WIDTH: 960px
+}
+.s-980 #body .inner {
+	WIDTH: 960px
+}
+.s-980 #footer .inner {
+	WIDTH: 960px
+}
+.w-980 .object-show-arrow {
+	WIDTH: 960px
+}
+.s-980 .object-show-arrow {
+	WIDTH: 960px
+}
+.w-980 #header #search {
+	WIDTH: 790px; MARGIN-LEFT: -355px
+}
+.s-980 #header #search {
+	WIDTH: 790px; MARGIN-LEFT: -355px
+}
+.w-980 #search .search-box {
+	WIDTH: 710px; _width: 713px
+}
+.s-980 #search .search-box {
+	WIDTH: 710px; _width: 713px
+}
+.w-980 #search .search-input {
+	WIDTH: 582px
+}
+.s-980 #search .search-input {
+	WIDTH: 582px
+}
+.w-980 .object-show-select {
+	WIDTH: 904px
+}
+.s-980 .object-show-select {
+	WIDTH: 904px
+}
+.w-980 .object-show-select A {
+	MARGIN: 0px 22px
+}
+.s-980 .object-show-select A {
+	MARGIN: 0px 22px
+}
+.w-980 .object-show-list {
+	WIDTH: 816px
+}
+.s-980 .object-show-list {
+	WIDTH: 816px
+}
+.w-980 .old-data {
+	
+}
+.s-980 .old-data {
+	
+}
+.w-980 #body .links .inner {
+	WIDTH: 900px
+}
+.s-980 #body .links .inner {
+	WIDTH: 900px
+}
+.w-980 .links .link-box {
+	WIDTH: 220px
+}
+.s-980 .links .link-box {
+	WIDTH: 220px
+}
+.w-980 .object-show-loading {
+	BACKGROUND-POSITION: 180px 71px
+}
+.s-980 .object-show-loading {
+	BACKGROUND-POSITION: 180px 71px
+}
+.w-980 .object-show-loading2 {
+	BACKGROUND-POSITION: 660px 71px
+}
+.s-980 .object-show-loading2 {
+	BACKGROUND-POSITION: 660px 71px
+}
+.w-980 .object-show-select A {
+	MARGIN: 5px 25px 0px
+}
+.s-980 .object-show-select A {
+	MARGIN: 5px 25px 0px
+}
+.w-980 .object-show-select .current A {
+	MARGIN: 0px 20px
+}
+.s-980 .object-show-select .current A {
+	MARGIN: 0px 20px
+}
+.w-980 .show-left {
+	WIDTH: 375px
+}
+.w-980 .show-right {
+	WIDTH: 375px
+}
+.s-980 .show-left {
+	WIDTH: 375px
+}
+.s-980 .show-right {
+	WIDTH: 375px
+}
+.s-980 .object-show-list {
+	HEIGHT: 221px; WIDTH: 903px; BACKGROUND: url(../images/book-bg.png) no-repeat
+}
+.w-980 .object-show-list {
+	HEIGHT: 221px; WIDTH: 903px; BACKGROUND: url(../images/book-bg.png) no-repeat
+}
+.w-980 .object-show {
+	BACKGROUND: url(../images/book-bg.png) no-repeat
+}
+.s-980 .object-show {
+	BACKGROUND: url(../images/book-bg.png) no-repeat
+}
+.w-980 #header .inner {
+	WIDTH: 990px
+}
+.w-980 #body .inner {
+	WIDTH: 990px
+}
+.s-980 #header .inner {
+	WIDTH: 990px
+}
+.s-980 #body .inner {
+	WIDTH: 990px
+}
+.w-980 .object-show-arrow {
+	WIDTH: 990px
+}
+.s-980 .object-show-arrow {
+	WIDTH: 990px
+}
+.w-980 #header {
+	HEIGHT: 300px
+}
+.s-980 #header {
+	HEIGHT: 300px
+}
+.w-980 #header .inner {
+	HEIGHT: 300px
+}
+.s-980 #header .inner {
+	HEIGHT: 300px
+}
+.w-980 #header #search {
+	BOTTOM: 45px
+}
+.s-980 #header #search {
+	BOTTOM: 45px
+}
+.w-980 #header #logo {
+	TOP: 102px
+}
+.s-980 #header #logo {
+	TOP: 102px
+}
+.w-980 #more .inner {
+	WIDTH: 903px
+}
+.s-980 #more .inner {
+	WIDTH: 903px
+}
+.w-980 .old-data LI A {
+	WIDTH: 290px; MARGIN-RIGHT: 11px
+}
+.w-980 .old-data LI SPAN {
+	WIDTH: 290px; MARGIN-RIGHT: 11px
+}
+.s-980 .old-data LI A {
+	WIDTH: 290px; MARGIN-RIGHT: 11px
+}
+.s-980 .old-data LI SPAN {
+	WIDTH: 290px; MARGIN-RIGHT: 11px
+}
+.w-980 #more .intro {
+	WIDTH: 824px
+}
+.s-980 #more .intro {
+	WIDTH: 824px
+}
+.w-980 #more .intro UL {
+	WIDTH: 850px
+}
+.s-980 #more .intro UL {
+	WIDTH: 850px
+}
+.w-980 #more .intro LI {
+	WIDTH: 369px; MARGIN-RIGHT: 30px
+}
+.s-980 #more .intro LI {
+	WIDTH: 369px; MARGIN-RIGHT: 30px
+}

@@ -1,0 +1,273 @@
+.ajax-progress {
+	padding: 1px 5px 2px; display: inline-block;
+}
+[dir='rtl'] .ajax-progress {
+	float: right;
+}
+.ajax-progress-throbber .throbber {
+	background: url("/core/misc/throbber-active.gif") no-repeat 0px; padding: 1px 5px 2px; display: inline;
+}
+.ajax-progress-throbber .message {
+	padding: 1px 5px 2px; display: inline;
+}
+tr .ajax-progress-throbber .throbber {
+	margin: 0px 2px;
+}
+.ajax-progress-bar {
+	width: 16em;
+}
+.ajax-progress-fullscreen {
+	background-position: center; padding: 4px; border-radius: 7px; left: 49%; top: 48.5%; width: 24px; height: 24px; position: fixed; z-index: 1000; opacity: 0.9; background-image: url("/core/misc/loading-small.gif"); background-repeat: no-repeat; background-color: rgb(35, 35, 35);
+}
+[dir='rtl'] .ajax-progress-fullscreen {
+	left: auto; right: 49%;
+}
+.text-align-left {
+	text-align: left;
+}
+.text-align-right {
+	text-align: right;
+}
+.text-align-center {
+	text-align: center;
+}
+.text-align-justify {
+	text-align: justify;
+}
+.align-left {
+	float: left;
+}
+.align-right {
+	float: right;
+}
+.align-center {
+	margin-right: auto; margin-left: auto; display: block;
+}
+.js input.form-autocomplete {
+	background-position: 100%; background-image: url("/core/misc/throbber-inactive.png"); background-repeat: no-repeat;
+}
+[dir='rtl'].js input.form-autocomplete {
+	background-position: 0%;
+}
+.js input.ui-autocomplete-loading.form-autocomplete {
+	background-position: 100%; background-image: url("/core/misc/throbber-active.gif");
+}
+[dir='rtl'].js input.ui-autocomplete-loading.form-autocomplete {
+	background-position: 0%;
+}
+.fieldgroup {
+	border-width: 0px; padding: 0px;
+}
+.container-inline div {
+	display: inline;
+}
+.container-inline label {
+	display: inline;
+}
+.container-inline .details-wrapper {
+	display: block;
+}
+.clearfix::after {
+	clear: both; display: table; content: "";
+}
+.js details:not([open]) .details-wrapper {
+	display: none;
+}
+.hidden {
+	display: none;
+}
+.visually-hidden {
+	width: 1px; height: 1px; overflow: hidden; position: absolute !important; clip: rect(1px, 1px, 1px, 1px); -ms-word-wrap: normal;
+}
+.focusable.visually-hidden:active {
+	width: auto; height: auto; overflow: visible; position: static !important; clip: auto;
+}
+.focusable.visually-hidden:focus {
+	width: auto; height: auto; overflow: visible; position: static !important; clip: auto;
+}
+.invisible {
+	visibility: hidden;
+}
+.item-list__comma-list {
+	display: inline;
+}
+.item-list__comma-list li {
+	display: inline;
+}
+.item-list__comma-list {
+	margin: 0px; padding: 0px;
+}
+.item-list__comma-list li::after {
+	content: ",";
+}
+.item-list__comma-list li:last-child::after {
+	content: "";
+}
+.js .js-hide {
+	display: none;
+}
+.js-show {
+	display: none;
+}
+.js .js-show {
+	display: block;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.position-container {
+	position: relative;
+}
+.progress {
+	position: relative;
+}
+.progress__track {
+	border: 1px solid currentColor; border-image: none; height: 16px; margin-top: 5px; min-width: 100px; max-width: 100%; background-color: rgb(255, 255, 255);
+}
+.progress__bar {
+	width: 3%; height: 16px; min-width: 3%; max-width: 100%; background-color: rgb(0, 0, 0);
+}
+.progress__description {
+	color: rgb(85, 85, 85); overflow: hidden; font-size: 0.87em; margin-top: 0.2em;
+}
+.progress__percentage {
+	color: rgb(85, 85, 85); overflow: hidden; font-size: 0.87em; margin-top: 0.2em;
+}
+.progress__description {
+	float: left;
+}
+[dir='rtl'] .progress__description {
+	float: right;
+}
+.progress__percentage {
+	float: right;
+}
+[dir='rtl'] .progress__percentage {
+	float: left;
+}
+.progress--small .progress__track {
+	height: 7px;
+}
+.progress--small .progress__bar {
+	height: 7px; background-size: 20px 20px;
+}
+.reset-appearance {
+	background: none; margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; line-height: inherit; -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+.resize-none {
+	resize: none;
+}
+.resize-vertical {
+	min-height: 2em; resize: vertical;
+}
+.resize-horizontal {
+	max-width: 100%; resize: horizontal;
+}
+.resize-both {
+	min-height: 2em; max-width: 100%; resize: both;
+}
+table.sticky-header {
+	top: 0px; margin-top: 0px; z-index: 500; background-color: rgb(255, 255, 255);
+}
+body.drag {
+	cursor: move;
+}
+tr.region-title {
+	font-weight: bold;
+}
+tr.region-message {
+	color: rgb(153, 153, 153);
+}
+tr.region-populated {
+	display: none;
+}
+tr.add-new .tabledrag-changed {
+	display: none;
+}
+.draggable a.tabledrag-handle {
+	height: 1.7em; overflow: hidden; text-decoration: none; margin-left: -1em; float: left; cursor: move;
+}
+[dir='rtl'] .draggable a.tabledrag-handle {
+	margin-right: -1em; margin-left: 0px; float: right;
+}
+a.tabledrag-handle:hover {
+	text-decoration: none;
+}
+a.tabledrag-handle .handle {
+	background: url("/core/misc/icons/787878/move.svg") no-repeat 6px 7px; margin: -0.4em 0.5em 0px; padding: 0.42em 0.5em; width: 14px; height: 14px;
+}
+a.tabledrag-handle:hover .handle {
+	background-image: url("/core/misc/icons/000000/move.svg");
+}
+a.tabledrag-handle:focus .handle {
+	background-image: url("/core/misc/icons/000000/move.svg");
+}
+.touchevents .draggable td {
+	padding: 0px 10px;
+}
+.touchevents .draggable .menu-item__link {
+	padding: 10px 0px; display: inline-block;
+}
+.touchevents a.tabledrag-handle {
+	width: 40px; height: 44px;
+}
+.touchevents a.tabledrag-handle .handle {
+	background-position: 40% 19px; height: 21px;
+}
+[dir='rtl'] .touch a.tabledrag-handle .handle {
+	background-position: right 40% top 19px;
+}
+.touchevents .drag.draggable a.tabledrag-handle .handle {
+	background-position: 50% -32px;
+}
+.tabledrag-toggle-weight-wrapper {
+	text-align: right;
+}
+[dir='rtl'] .tabledrag-toggle-weight-wrapper {
+	text-align: left;
+}
+.indentation {
+	margin: -0.4em 0.2em -0.4em -0.4em; padding: 0.42em 0px 0.42em 0.6em; width: 20px; height: 1.7em; float: left;
+}
+[dir='rtl'] .indentation {
+	margin: -0.4em -0.4em -0.4em 0.2em; padding: 0.42em 0.6em 0.42em 0px; float: right;
+}
+.tablesort {
+	width: 16px; height: 16px; display: inline-block; background-size: 100%;
+}
+.tablesort--asc {
+	background-image: url("/core/misc/icons/787878/twistie-down.svg");
+}
+.tablesort--desc {
+	background-image: url("/core/misc/icons/787878/twistie-up.svg");
+}
+div.tree-child {
+	background: url("/core/misc/tree.png") no-repeat 11px;
+}
+div.tree-child-last {
+	background: url("/core/misc/tree-bottom.png") no-repeat 11px;
+}
+[dir='rtl'] div.tree-child {
+	background-position: -65px;
+}
+[dir='rtl'] div.tree-child-last {
+	background-position: -65px;
+}
+div.tree-child-horizontal {
+	background: url("/core/misc/tree.png") no-repeat -11px;
+}
+.views-align-left {
+	text-align: left;
+}
+.views-align-right {
+	text-align: right;
+}
+.views-align-center {
+	text-align: center;
+}
+.views-view-grid .views-col {
+	float: left;
+}
+.views-view-grid .views-row {
+	width: 100%; clear: both; float: left;
+}

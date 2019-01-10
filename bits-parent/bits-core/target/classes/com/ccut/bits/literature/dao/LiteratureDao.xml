@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD iBatis Mapper 3.0 //EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccut.bits.literature.dao.LiteratureDao">
+    <select id="getAllLiterature" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM literature_info
+        <if test="begin != null and size != null">
+            LIMIT #{begin},#{size}
+        </if>
+    </select>
+
+    <select id="getAllFile" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM file_info
+        <if test="begin != null and size != null">
+            LIMIT #{begin},#{size}
+        </if>
+    </select>
+
+    <select id="getTotalRecord" resultType="int">
+        SELECT COUNT(id) FROM literature_info
+    </select>
+
+    <select id="getLiteratureByThemeId" resultType="com.ccut.bits.literature.model.Literature">
+       SELECT a.* FROM file_info a,theme_file b
+        WHERE b.theme_id = #{themeId} AND a.file_id = b.file_id
+        ORDER BY a.file_time DESC LIMIT #{begin},#{size}
+    </select>
+
+    <select id="getAllLiteratureByThemeId" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT a.* FROM file_info a,theme_file b
+        WHERE b.theme_id = #{themeId} AND a.file_id = b.file_id
+        ORDER BY a.file_time DESC
+    </select>
+
+    <select id="getRelationByFileId" resultType="com.ccut.bits.literature.model.Literature">
+        select * from file_info
+        right join
+         (select file_id1 from file_relation where file_id2=#{id} union select file_id2 from file_relation where file_id1=#{id})t
+         on t.file_id1 = file_info.file_id;
+    </select>
+
+    <select id="getTotalRecordByThemeId" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT literature_info_id) FROM relationship
+        WHERE theme_type_id = #{themeId}
+    </select>
+
+    <insert id="setGeneralFile">
+        insert into file_general(file_id,user_id,time) values(#{fileId}, #{userId}, #{time})
+    </insert>
+
+    <insert id="setScore">
+        insert ignore into user_file_score(file_id,user_id,score) values(#{fileId}, #{userId}, #{score})
+    </insert>
+    <update id="setTotleScore">
+       update file_info set totlescore=(totlescore*score_people+#{score})/(score_people+1) where file_id=#{fileId}
+    </update>
+    <update id="addScorePeople">
+        update file_info set score_people=score_people+1 where file_id=#{fileId}
+    </update>
+    <select id="getLiteratureById" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM file_info WHERE file_id = #{id};
+    </select>
+
+    <select id="getLiteratureByIdOld" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM literature_info WHERE id = #{id};
+    </select>
+
+    <select id="getLiteratureByFileName" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM file_info WHERE file_name = #{fileName} limit 1;
+    </select>
+
+    <select id="getLiteraturesByIds" resultType="com.ccut.bits.literature.model.Literature">
+        SELECT * FROM literature_info
+        <where>
+            id IN
+            <foreach collection="ids" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="getLiteratureIdsByExpertId" resultType="java.lang.Integer">
+        SELECT literature_info_id FROM relationship WHERE expert_info_id = #{id}
+    </select>
+
+    <select id="countLiteratureByExpertId" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT literature_info_id) FROM relationship WHERE expert_info_id = #{id}
+    </select>
+
+    <insert id="addLiterature">
+        INSERT INTO literature_info (title,abs,author_cn,unit,journal_cn,app_date)
+        VALUES (#{title},#{abs},#{authorCn},#{unit},#{journalCn},#{appDate})
+    </insert>
+
+    <update id="editLiterature">
+        UPDATE file_info
+        SET
+       file_name = #{fileName},
+       file_abstract = #{fileAbstract},
+       file_keywords=#{fileKeywords},
+       flag=1
+        WHERE file_id = #{fileId}
+    </update>
+
+    <update id="updateUniqueId">
+        UPDATE file_info
+        SET
+        file_id = #{fileUniqueId}
+        WHERE file_id = #{fileId}
+    </update>
+
+    <select id="getTypeIdbyTypeName" resultType="int">
+        SELECT type_id FROM file_type WHERE type_general = #{type}
+    </select>
+    <select id="getTypeGeneralbyTypeName" resultType="String">
+        SELECT type_general FROM file_type WHERE type_name = #{type}
+    </select>
+    <delete id="delLiterature">
+        DELETE FROM file_info WHERE file_id = #{id}
+    </delete>
+
+    <select id="getLiteratureListPage" resultType="com.ccut.bits.literature.model.Literature">
+      select * from file_info
+    </select>
+
+    <insert id="addLiteratureTheme">
+        INSERT INTO theme_file (file_id,theme_id)
+        VALUES (#{fileId},#{themeId})
+    </insert>
+
+    <insert id="relationFile">
+        INSERT INTO file_relation (file_id1,file_id2)
+        VALUES (#{relationId},#{id})
+    </insert>
+</mapper>
