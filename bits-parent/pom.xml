@@ -33,7 +33,7 @@
         <dwr.version>3.0-rc1</dwr.version>
         <et99java.version>1.0.0</et99java.version>
         <ezmorph.version>1.0.6</ezmorph.version>
-        <mybatis.version>3.2.5</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <tomcat-jdbc.version>7.0.52</tomcat-jdbc.version>
         <itext.version>2.1.7</itext.version>
         <itextasian.version>1.0.0</itextasian.version>
