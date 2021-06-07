@@ -44,7 +44,7 @@
         <jxcell.version>1.0.0</jxcell.version>
         <jxl.version>1.0</jxl.version>
         <slf4j.version>1.7.7</slf4j.version>
-        <logback.version>1.1.2</logback.version>
+        <logback.version>1.2.0</logback.version>
         <mysql-connector-java.version>5.0.8</mysql-connector-java.version>
         <pdf-transcoder.version>1.0.0</pdf-transcoder.version>
         <pinyin4j.version>2.5.0</pinyin4j.version>
