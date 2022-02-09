@@ -14,7 +14,7 @@
     <name>bits core</name>
 
     <properties>
-        <hadoop.version>2.6.0</hadoop.version>
+        <hadoop.version>2.10.1</hadoop.version>
     </properties>
 
     <dependencies>
