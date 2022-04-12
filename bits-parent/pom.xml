@@ -60,7 +60,7 @@
         <shiro.version>1.2.3</shiro.version>
         <ehcache.version>2.6.6</ehcache.version>
         <svnkit.version>1.8.5</svnkit.version>
-        <hadoop.version>2.6.0</hadoop.version>
+        <hadoop.version>3.2.3</hadoop.version>
         <!-- Plugin的属性定义 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
