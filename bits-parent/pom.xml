@@ -52,7 +52,7 @@
         <quartz.version>1.5.2</quartz.version>
         <spring.version>3.2.8.RELEASE</spring.version>
         <xml-apis-ext.version>1.3.04</xml-apis-ext.version>
-        <hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.0.23.Final</hibernate-validator.version>
         <junit.version>4.11</junit.version>
         <jackson.version>2.3.2</jackson.version>
         <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
